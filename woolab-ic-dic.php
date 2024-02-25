@@ -5,7 +5,7 @@
  Release Asset: true
  Plugin URI:			https://github.com/3dstisk/woolab-ic-dic
  Description:			Adds Czech Company & VAT numbers (IČO & DIČ) to WooCommerce billing fields and verifies if data are correct.
- Version:				1.9.1
+ Version:				1.9.2
  Author:				Karolína Vyskočilová
  Author URI:			https://kybernaut.cz
  Text Domain:			woolab-ic-dic
