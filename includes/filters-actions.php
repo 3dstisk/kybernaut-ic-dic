@@ -593,6 +593,7 @@ function woolab_icdic_ajax_get_customer_details( $data, $customer, $user_id ){
  * @return void
  */
 function woolab_icdic_process_shop_order ( $post_id, $post ) {
+
 	if ( empty( $_POST['woocommerce_meta_nonce'] ) ) {
 		return;
 	}
@@ -626,28 +627,6 @@ function woolab_icdic_process_shop_order ( $post_id, $post ) {
 	}
 
 	if ( isset($_POST['_billing_billing_ic']) || isset($_POST['_billing_billing_dic']) || isset($_POST['_billing_billing_dic_dph']) ) {
-		$order->save();
-	}
-
-}
-
-function woolab_icdic_checkout_order_created ( $post_id ) {
-	
-	$order = wc_get_order( $post_id );
-
-	if ( isset($_POST['billing_ic']) ) {
-		$order->update_meta_data( '_billing_ic', wc_clean( $_POST['billing_ic'] ) );
-	}
-	if ( isset($_POST['billing_dic']) ) {
-		$order->update_meta_data( '_billing_dic', wc_clean( $_POST['billing_dic'] ) );
-		$order->update_meta_data( '_billing_nip', wc_clean( $_POST['billing_dic'] ) );
-	}
-	if ( isset($_POST['billing_dic_dph']) ) {
-		$order->update_meta_data( '_billing_dic_dph', wc_clean( $_POST['billing_dic_dph'] ) );
-		$order->update_meta_data( '_billing_nip', wc_clean( $_POST['billing_dic_dph'] ) );
-	}
-
-	if ( isset($_POST['billing_ic']) || isset($_POST['billing_dic']) || isset($_POST['billing_dic_dph']) ) {
 		$order->save();
 	}
 

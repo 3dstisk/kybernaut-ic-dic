@@ -265,9 +265,9 @@
                                     // Update values
                                     $('#billing_company').val(data.spolecnost).attr('readonly', true);
                                     $('#billing_dic').val(data.dic).attr('readonly', true);
-                                    $('#billing_address_1').val(data.adresa);
-                                    $('#billing_postcode').val(data.psc);
-                                    $('#billing_city').val(data.mesto);
+                                    $('#billing_address_1').val(data.adresa).attr('readonly', true);
+                                    $('#billing_postcode').val(data.psc).attr('readonly', true);
+                                    $('#billing_city').val(data.mesto).attr('readonly', true);
                                     ico_class.append( '<span role="info" class="woolab-ic-dic-tip">'+woolab.l18n_ok+'</span>' );
 
                                     // Trigger the checkout update
