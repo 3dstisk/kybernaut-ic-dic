@@ -1,6 +1,9 @@
 name: Create build
 on:
   workflow_dispatch:
+  push:
+    tags:
+      - "*"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,7 +31,7 @@ jobs:
       - name: Archive plugin artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: woolab-ic-dic
+          name: woolab-ic-dic-${{ github.ref_name }}
           path: |
             ${{ github.workspace }}
             !git/**/*
@@ -37,4 +40,3 @@ jobs:
             !DOCKER_ENV
             !docker_tag
             !output.log
-        
