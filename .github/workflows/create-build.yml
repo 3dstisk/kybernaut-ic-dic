@@ -32,8 +32,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: woolab-ic-dic-${{ github.ref_name }}
-          # path: |
-          #   ${{ github.workspace }}
+          path: ./
+
           #   !git/**/*
           #   !github/**/*
           #   !tests/**/*
